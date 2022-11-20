@@ -35,7 +35,7 @@ app.post('/api/v1/file', async (req,res) => {
             auth
         })
         const fileMetaData = {
-            'name': `${ new Date().getTime() }.avchd`,
+            'name': new Date().getTime(),
             'parents': [GOOGLE_API_FOLDER_ID]
         }
         const media = {
