@@ -52,7 +52,9 @@ app.post('/api/v1/file', async (req,res) => {
             id: response.data.id
         })
     } catch(err) {
-        console.error(err)
+        res.status(403).json({
+            message: err
+        })
     }
     fs.unlinkSync(pathName);
 })
