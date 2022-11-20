@@ -47,7 +47,6 @@ app.post('/api/v1/file', async (req,res) => {
             media: media,
             field: 'id'
         })
-        console.log( response.data.id )
         res.json({
             status: 200,
             id: response.data.id
