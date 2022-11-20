@@ -35,11 +35,11 @@ app.post('/api/v1/file', async (req,res) => {
             auth
         })
         const fileMetaData = {
-            'name': `${ new Date().getTime() }.webp`,
+            'name': `${ new Date().getTime() }.avchd`,
             'parents': [GOOGLE_API_FOLDER_ID]
         }
         const media = {
-            mimeType: req.body.mimeType,
+            mimeType: 'image/avchd',
             body: fs.createReadStream(pathName)
         }
         const response = await driveService.files.create({
