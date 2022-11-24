@@ -22,7 +22,7 @@ app.post('/api/v1/file', async (req,res) => {
 
     const pathName = './stream/' + short.generate() + '.stream';
     fs.writeFileSync(pathName, req.body.image, {
-        encoding: 'base64'
+        encoding: 'base64url'
     });
     
     try {

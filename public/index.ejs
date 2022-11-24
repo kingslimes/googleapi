@@ -18,11 +18,11 @@ const convertBase64 = (file) => {
         const fileReader = new FileReader();
         fileReader.readAsDataURL(file);
         fileReader.onload = () => {
-            let encoded = fileReader.result.toString().replace(/^data:(.*,)?/, '');
-            if ((encoded.length % 4) > 0) {
-                encoded += '='.repeat(4 - (encoded.length % 4));
-            }
-            resolve(encoded);
+            // let encoded = fileReader.result.toString().replace(/^data:(.*,)?/, '');
+            // if ((encoded.length % 4) > 0) {
+            //     encoded += '='.repeat(4 - (encoded.length % 4));
+            // }
+            resolve(fileReader.result);
         };
         fileReader.onerror = (error) => {
             reject(error);
